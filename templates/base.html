@@ -1,0 +1,22 @@
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }}</title>
+      {% else %}
+      <title>Welcome</title>
+      {% endif %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='CSS/main.css') }}">
+    </head>
+    <body>
+        <div>Pages:
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/plot_line">Plot</a>
+            <a href="/characters">Characters</a>
+            <a href="/setting">Setting</a>
+            <a href="/write">Write</a>
+        </div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>
