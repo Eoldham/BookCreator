@@ -2,4 +2,101 @@
 
 {% block content %}
     <h1>Design your characters</h1>
+    <form action="" method="post">
+    <p>
+        {{ form.name.label }}<br>
+        {{ form.name(size = 30) }}
+    </p>
+    <p>
+        {{ form.nickname.label }}<br>
+        {{ form.nickname(size = 30) }}
+    </p>
+    <p>
+        {{ form.birthday.label }}<br>
+        {{ form.birthday(size = 30) }}
+    </p>
+    <p>
+        {{ form.birth_place.label }}<br>
+        {{ form.birth_place(size = 30) }}
+    </p>
+    <p>
+        {{ form.height.label }}<br>
+        {{ form.height(size = 30) }}
+    </p>
+    <p>
+        {{ form.weight.label }}<br>
+        {{ form.weight(size = 30) }}
+    </p>
+    <p>
+        {{ form.body.label }}<br>
+        {{ form.body(size = 30) }}
+    </p>
+     <p>
+        {{ form.eye_color.label }}<br>
+        {{ form.eye_color(size = 30) }}
+    </p>
+    <p>
+        {{ form.glasses.label }}<br>
+        {{ form.glasses(size = 30) }}
+    </p>
+    <p>
+        {{ form.contacts.label }}<br>
+        {{ form.contacts(size = 30) }}
+    </p>
+    <p>
+        {{ form.skin_tone.label }}<br>
+        {{ form.skin_tone(size = 30) }}
+    </p>
+    <p>
+        {{ form.freckles.label }}<br>
+        {{ form.freckles(size = 30) }}
+    </p>
+    <p>
+        {{ form.moles.label }}<br>
+        {{ form.moles(size = 30) }}
+    </p>
+    <p>
+        {{ form.mole_placement.label }}<br>
+        {{ form.mole_placement(size = 30) }}
+    </p>
+    <p>
+        {{ form.scars.label }}<br>
+        {{ form.scars(size = 30) }}
+    </p>
+    <p>
+        {{ form.scar_placement.label }}<br>
+        {{ form.scar_placement(size = 30) }}
+    </p>
+    <p>
+        {{ form.tattoos.label }}<br>
+        {{ form.tattoos(size = 30) }}
+    </p>
+    <p>
+        {{ form.tattoo_placement.label }}<br>
+        {{ form.tattoo_placement(size = 30) }}
+    </p>
+    <p>
+        {{ form.health.label }}<br>
+        {{ form.health (size = 30) }}
+    </p>
+    <p>
+        {{ form.outfit.label }}<br>
+        {{ form.outfit(size = 30) }}
+    </p>
+    <p>
+        {{ form.hair_color.label }}<br>
+        {{ form.hair_color(size = 30) }}
+    </p>
+    <p>
+        {{ form.hair_texture.label }}<br>
+        {{ form.hair_texture(size = 30) }}
+    </p>
+    <p>
+        {{ form.hair_length.label }}<br>
+        {{ form.hair_length(size = 30) }}
+    </p>
+
+    <p>{{ form.submit() }}</p>
+</form>
+
 {% endblock %}

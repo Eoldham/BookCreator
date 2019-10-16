@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for char in character_list.items() %}
+    <h3>Character: {{char['name']}}</h3>
+    {% for key,value in char.items() %}
+    <h4>{{ key }}: {{ value }}</h4>
+    {% endfor %}
+{% endfor %}
+
+{% endblock %}
