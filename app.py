@@ -1,11 +1,14 @@
 from flask import Flask,render_template,redirect, url_for,request
 import Character_class
 from forms import SignUpForm
-from forms import Character_sheet
+from forms import CharacterSheet
+from forms import Archetype
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'thecodex'
 
-character_list = []
+ARCHETYPE = ''
+#gobal string that holds the archetype variable
+CHARACTER_LIST = []
 #global list that keeps all character dictionaries created
 @app.route('/')
 def home():
@@ -23,7 +26,10 @@ def login():
 
 @app.route('/plot_line')
 def pick_plot():
-    return render_template('plots.html')
+    form = Archetype
+    archetype = request.form
+    ARCHETYPE = archetype
+    return render_template('plots.html', form = form)
 
 @app.route('/setting')
 def pick_setting():
@@ -34,19 +40,23 @@ def pick_setting():
     return render_template('setting.html')
 
 @app.route('/characters', methods = ['GET','POST'])
-def characters():
-    form = Character_sheet()
+def characterSheet():
+    form = CharacterSheet()
     if form.is_submitted():
+        #character = __html__(request.form)
         character = request.form
-        character_list.append(character)
+        print(character)
+        CHARACTER_LIST.append(character)
+        print(CHARACTER_LIST)
     return render_template('characters.html', form = form)
 
 @app.route('/user_character')
 def characters():
-    return render_template('user_characters.html', character_list = character_list)
+    return render_template('user_characters.html', character_list = CHARACTER_LIST)
 
 @app.route('/write')
 def writing():
+    print(CHARACTER_LIST)
     return render_template('write.html')
 
 @app.route('/signup',methods = ['GET', 'POST'])

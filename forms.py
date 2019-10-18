@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField
+from wtforms import StringField, PasswordField, SubmitField, SelectField
 
 
 class SignUpForm(FlaskForm):
@@ -8,7 +8,7 @@ class SignUpForm(FlaskForm):
     submit = SubmitField('Sign up')
 
 
-class Character_sheet(FlaskForm):
+class CharacterSheet(FlaskForm):
     name = StringField('Name')
     nickname = StringField('Nickname')
     birthday = StringField('Birthday')
@@ -33,3 +33,9 @@ class Character_sheet(FlaskForm):
     hair_texture = StringField('Hair Texture')
     hair_length = StringField('Hair Length')
     submit = SubmitField('Create Character')
+
+
+class Archetype(FlaskForm):
+    archetype = SelectField('Which Archetype?', choices=['A', 'B'])
+
+class Setting(FlaskForm)

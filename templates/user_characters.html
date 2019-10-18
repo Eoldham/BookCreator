@@ -2,11 +2,15 @@
 
 {% block content %}
 
-{% for char in character_list.items() %}
-    <h3>Character: {{char['name']}}</h3>
-    {% for key,value in char.items() %}
-    <h4>{{ key }}: {{ value }}</h4>
+{% if character_list == [] %}
+    <h2> you have no characters :(</h2>
+    {%else%}
+    {% for dictionary in character_list %}
+            <h3>Character: {{dictionary['name']}}</h3>
+            {% for items in dictionary.items() %}
+                <h4>{{ items[0] }}: {{ items[1] }}</h4>
+            {% endfor %}
     {% endfor %}
-{% endfor %}
 
+{% endif %}
 {% endblock %}
