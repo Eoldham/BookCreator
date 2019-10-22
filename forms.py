@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, SelectField
+from wtforms import StringField, PasswordField, SubmitField, SelectField, TextAreaField
 
 
 class SignUpForm(FlaskForm):
@@ -38,4 +38,34 @@ class CharacterSheet(FlaskForm):
 class Archetype(FlaskForm):
     archetype = SelectField('Which Archetype?', choices=['A', 'B'])
 
-class Setting(FlaskForm)
+
+class Setting(FlaskForm):
+    main_location = TextAreaField("Main Location")
+    wider_geography = TextAreaField("Wider Geography")
+    key_locations = TextAreaField("Key Locations")
+    activities_occupations = TextAreaField("Activities and Occupations")
+    natural_world = TextAreaField("The Natural World")
+    real_place = StringField('Real Place')
+    real_place_likes = TextAreaField("Likes")
+    real_place_research = TextAreaField("Research")
+    atmosphere = StringField("Atmosphere")
+    time_of_day = StringField("Time of day")
+    weather = TextAreaField("Weather")
+    sounds = TextAreaField("Sounds")
+    smells = TextAreaField("Smells")
+    tastes = TextAreaField("Tastes")
+    sights = TextAreaField("Sights")
+    feels = TextAreaField("Feels")
+    plot = TextAreaField("Plot Addition")
+    character = TextAreaField("Reveal Character")
+    time_period = StringField("Time Period")
+    submit = SubmitField('Done With Setting')
+
+
+class Write(FlaskForm):
+    beginning = TextAreaField("Beginning")
+    introduce_conflict = TextAreaField("Introduce Conflict")
+    climax = TextAreaField("Climax")
+    resolve_conflict = TextAreaField("Resolve Conflict")
+    end = TextAreaField("Ending")
+    submit = SubmitField("Finished Writing")

@@ -1,8 +1,9 @@
 from flask import Flask,render_template,redirect, url_for,request
-import Character_class
 from forms import SignUpForm
 from forms import CharacterSheet
 from forms import Archetype
+from forms import Setting
+from forms import Write
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'thecodex'
 
@@ -10,6 +11,10 @@ ARCHETYPE = ''
 #gobal string that holds the archetype variable
 CHARACTER_LIST = []
 #global list that keeps all character dictionaries created
+SETTING= []
+#global list that keeps all setting notes
+BOOK = []
+#global list that holds all books
 @app.route('/')
 def home():
     return render_template('home.html')
@@ -31,19 +36,22 @@ def pick_plot():
     ARCHETYPE = archetype
     return render_template('plots.html', form = form)
 
-@app.route('/setting')
+@app.route('/setting', methods = ['GET','POST'])
 def pick_setting():
-    error = None
-    if request.method == 'POST':
-        name = request.form['name']
+    form = Setting()
+    if form.is_submitted():
+        setting = request.form
+        SETTING.append(setting)
+    return render_template('setting.html', form = form)
 
-    return render_template('setting.html')
+@app.route('/user_setting')
+def setting():
+    return render_template('user_setting.html', Setting = SETTING)
 
 @app.route('/characters', methods = ['GET','POST'])
 def characterSheet():
     form = CharacterSheet()
     if form.is_submitted():
-        #character = __html__(request.form)
         character = request.form
         print(character)
         CHARACTER_LIST.append(character)
@@ -54,10 +62,17 @@ def characterSheet():
 def characters():
     return render_template('user_characters.html', character_list = CHARACTER_LIST)
 
-@app.route('/write')
+@app.route('/write', methods = ['GET','POST'])
 def writing():
-    print(CHARACTER_LIST)
-    return render_template('write.html')
+    form = Write()
+    if form.is_submitted():
+        book = request.form
+        BOOK.append(book)
+    return render_template('write.html', form = form)
+
+@app.route('/user_books')
+def book():
+    return render_template('user_books.html', Book = BOOK)
 
 @app.route('/signup',methods = ['GET', 'POST'])
 def signup():

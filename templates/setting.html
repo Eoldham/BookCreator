@@ -1,6 +1,145 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Choose your setting</h1>
-   </form>
+    <h1>Design your Setting</h1>
+    <form action="" method="post">
+    <h6>Create your main location</h6>
+        <h11>In most cases, this will be the city or town or suburb – real or fictional – in which the novel’s events play out.
+            But stories don’t have to take place in traditional “communities” (the kind we all live in). In a seafaring novel, for example, the main location will be the ship. In others, it might be a desert, an airplane or a space station.
+            Don’t worry about the specifics yet. For now, just make a few notes on the overall impression that you your main location leaves. Imagine that you’re trying to describe your setting to someone who’s never been there
+        </h11>
+    <p>
+        {{ form.main_location.label }}<br>
+        {{ form.main_location(cols = "50",rows="10") }}
+    </p>
+        <h6>Create The Wider Geography</h6>
+        <h11>
+            Think about what’s beyond your central location. When characters look out of their windows, do they see snowy mountain tops or smoke stacks? Where do they head to on a day out? What else is nearby?
+            These things can make a huge difference to the story. A small town surrounded by lakes and forests, for example, will have a very different atmosphere to one surrounded by heavy industry. A story set aboard a ship in the North Atlantic will be entirely different to one set in the South Pacific.
+            Whatever it is that surrounds your central location or community, it will act as more than just a pretty (or an ugly) backdrop.
+            The characters will travel there, or at least find that it affects them in some way. So be sure to make the wider geography “fit” the story you want to tell.
+        </h11>
+    <p>
+        {{ form.wider_geography.label }}<br>
+        {{ form.wider_geography(cols = "50",rows="10") }}
+    </p>
+        <h6>Make your Key Locations</h6>
+        <h11>
+            Next, zoom in on the principal locations within the overall setting. List all the places where the majority of the scenes in the story take place – the central character’s house, their place of work, the bar they like to visit, and so on.
+            Bear in mind that these places must somehow “fit” with the character. A man who lives in an apartment with peeling wallpaper and who drinks in the seediest bar in town will be very different from one who lives in a penthouse and drinks in a fancy cocktail lounge.
+            Also remember to make these locations as interesting and as unusual as you can. Find that single detail which sets somewhere apart from all the other places like it.
+            If a character works in a downtown record store, for example, say that it used to be a greengrocer’s and the records are all stored in old vegetable crates. Something quirky and distinctive like that.
+            Sometimes, these “key locations” will select themselves. If you set your novel in a newspaper office, for example, that’s your key location right there.
+            Where you have a greater number of locations, with no one being especially more important than the others, try hard to make each one distinctive and memorable. It stops them all blending into each other.
+        </h11>
+    <p>
+        {{ form.key_locations.label }}<br>
+        {{ form.key_locations(cols = "50",rows="10") }}
+    </p>
+        <h6>Create Peoples Activities and Occupations</h6>
+        <h11>
+            Those things may seem like odd categories for a story’s setting, but they absolutely help to give your novel a sense of place.
+            Your main character may be a lawyer or a farmer or a detective. The details of how these jobs are performed are as much a part of the “setting” as the physical office or farm or police station in which the characters work.
+            Describing the physical characteristics of a farm – the land, the buildings, and so on – is just one aspect of its setting. Talking about how to fix a broken tractor or how to harvest pumpkins adds an extra, and perhaps a more interesting, dimension.
+            And activities and occupations, of course, also apply to what characters do for a hobby: restoring classic cars, breeding tropical fish, solving cryptic crosswords, and so on.
+            These things may or may not have a bearing on the plot. But they certainly help to form an interesting backdrop against which the events take place.
+            Here’s an important question to ask… Whatever activity lies at your novel’s core (banking, pig farming, running a Chinese restaurant), do you know enough about it to write with authority?
+            “Knowing enough” doesn’t mean that you have to be an expert. You don’t need to be a world authority on playing poker, for example, to write a good story based around the game. But you do need to be fluent with the fundamentals and have enough “insider knowledge” to interest the casual reader.
+            If someone really wants to find out about poker, they’ll read a non-fiction guide to the game, not your novel. In other words, your aim isn’t to educate your readers (do that and you run the risk of boring them). You just need to provide enough detail – an interesting fact here, the correct terminology there – to make the poker-playing scenes believable.
+        </h11>
+    <p>
+        {{ form.activities_occupations.label }}<br>
+        {{ form.activities_occupations(cols = "50",rows="10") }}
+    </p>
+        <h6>Create Your Natural World</h6>
+        <h11>
+            Most novels make some mention of nature, if only to describe the leaves falling off the trees or the sound of bird song.
+            The more rural the setting, the more you’ll need to mention the natural world to add realism to the story. But even big cities have cats and foxes and trees and spiders.
+            Authenticity is important. The animal sounds you hear at night in Montana are very different from the ones you hear in New York. So wherever you set your novel, take the time to do some research and get your facts straight.
+            The weather is part of nature, too. And it’s vital in helping to create an atmospheric setting. A scene that takes place at midday during a heat wave will be very different from the same scene set at midnight with a snow storm blowing in.
+            This isn’t the time and place to work out the precise weather conditions in every scene (you can do that when you come to write each one). But it is the time to do some research if you’re unfamiliar with the weather patterns in your chosen location.
+            For example, if it’s June in your novel and June is the rainy season, you need to make it rain – or else talk about how the rains are late this year.
+        </h11>
+    <p>
+        {{ form.natural_world.label }}<br>
+        {{ form.natural_world(cols = "50",rows="10") }}
+    </p>
+        <h6>Find a real place to base it off of</h6>
+        <h11>Watch videos. Read nonfiction and fiction books. Look at photographs and videos. Talk to people who live there. For each novel, I filled a scrapbook with photos, notes, newspaper cuttings and anything else that related to the place in some way. This also functioned as a collection of material that was useful as idea prompts.
+            If you’re able to visit the setting, do. I was lucky to be able to return to the Himalayas whilst writing the book. There, I interviewed people, trekked into the mountains, attended Dalai Lama teachings and had experiences that would form the heart of the story. I also recorded video snippets to capture moments and sounds, and filled journals that would allow me to immerse myself in the place when I was back at my desk, miles away from it.
+            Even if you’re writing fantasy and call the setting something else, physically anchoring some aspects of a story in an actual place can give it a reality.
+        </h11>
+    <p>
+        {{ form.real_place.label }}<br>
+        {{ form.real_place(size = 30) }}
+    </p>
+    <p>
+        {{ form.real_place_likes.label }}<br>
+        {{ form.real_place_likes(cols = "50",rows="10") }}
+    </p>
+     <p>
+        {{ form.real_place_research.label }}<br>
+        {{ form.real_place_research(cols = "50",rows="10") }}
+    </p>
+        <h6>Create Your atmosphere or mood.</h6>
+    <p>
+        {{ form.atmosphere.label }}<br>
+        {{ form.atmosphere(size = 30) }}
+    </p>
+    <p>
+        {{ form.time_of_day.label }}<br>
+        {{ form.time_of_day(size = 30) }}
+    </p>
+    <p>
+        {{ form.weather.label }}<br>
+        {{ form.weather(cols = "50",rows="10") }}
+    </p>
+    <p>
+        {{ form.sounds.label }}<br>
+        {{ form.sounds(cols = "50",rows="10") }}
+    </p>
+    <p>
+        {{ form.smells.label }}<br>
+        {{ form.smells(cols = "50",rows="10") }}
+    </p>
+    <p>
+        {{ form.tastes.label }}<br>
+        {{ form.tastes(cols = "50",rows="10") }}
+    </p>
+    <p>
+        {{ form.sights.label }}<br>
+        {{ form.sights(cols = "50",rows="10") }}
+    </p>
+    <p>
+        {{ form.feels.label }}<br>
+        {{ form.feels(cols = "50",rows="10") }}
+    </p>
+        <h6>Does Your Setting involve aspects of plot?</h6>
+        <h11>
+        In Running on the Roof of the World, the mountains become part of the plot as they form a gigantic barrier that must somehow be crossed.
+        </h11>
+    <p>
+        {{ form.plot.label }}<br>
+        {{ form.plot(cols = "50",rows="10") }}
+    </p>
+        <h6> Does your Setting reveal aspects of your character? </h6>
+        <h11>
+            Does your character have any specialist knowledge? Are they able to name the types of trees around them? Or do they love birds, cars, or graffiti? What do they notice in their surroundings? Do they see things positively or negatively depending on their mood?
+        </h11>
+    <p>
+        {{ form.character.label }}<br>
+        {{ form.character(cols = "50",rows="10") }}
+    </p>
+    <p>
+        {{ form.time_period.label }}<br>
+        {{ form.time_period (size = 30) }}
+    </p>
+        <h11>Information From: <br>
+            https://www.novel-writing-help.com/story-setting.html
+            https://www.writersandartists.co.uk/writers/advice/1168/a-writers-toolkit/story-and-plot/
+        </h11>
+
+    <p>{{ form.submit() }}</p>
+</form>
+
 {% endblock %}

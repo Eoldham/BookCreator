@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if Setting == [] %}
+    <h2> you have no Setting :(</h2>
+    {%else%}
+    {% for dictionary in Setting %}
+            {% for items in dictionary.items() %}
+                <h4>{{ items[0] }}: {{ items[1] }}</h4>
+            {% endfor %}
+    {% endfor %}
+
+{% endif %}
+{% endblock %}
