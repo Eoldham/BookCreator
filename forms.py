@@ -36,8 +36,8 @@ class CharacterSheet(FlaskForm):
 
 
 class Archetype(FlaskForm):
-    archetype = SelectField('Which Archetype?', choices=['A', 'B'])
-
+    archetype = TextAreaField("Write your Archetype and Design your plot!")
+    submit = SubmitField('Finished Plot')
 
 class Setting(FlaskForm):
     main_location = TextAreaField("Main Location")

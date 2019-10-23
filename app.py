@@ -4,11 +4,13 @@ from forms import CharacterSheet
 from forms import Archetype
 from forms import Setting
 from forms import Write
+import spacy
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'thecodex'
 
-ARCHETYPE = ''
-#gobal string that holds the archetype variable
+ARCHETYPE = []
+#gobal list that holds the archetype variable
 CHARACTER_LIST = []
 #global list that keeps all character dictionaries created
 SETTING= []
@@ -29,12 +31,16 @@ def login():
             return redirect(url_for('/user_home'))
     return render_template('login.html',error = error)
 
-@app.route('/plot_line')
+@app.route('/plot_line', methods = ['GET', 'POST'])
 def pick_plot():
-    form = Archetype
+    form = Archetype()
     archetype = request.form
-    ARCHETYPE = archetype
+    ARCHETYPE.append(archetype)
     return render_template('plots.html', form = form)
+
+@app.route('/user_archetype')
+def archetype():
+    return render_template('user_archetype.html', archetype = ARCHETYPE)
 
 @app.route('/setting', methods = ['GET','POST'])
 def pick_setting():
@@ -81,6 +87,14 @@ def signup():
         result = request.form
         return render_template('user.html', result = result)
     return render_template('signup.html', form = form)
+
+def compare_books():
+    nlp = spacy.load("en_core_web_sm")
+    for book in BOOK:
+        for item in book.items():
+            text = text + item[1]
+        user_book = nlp(text)
+
 
 if __name__ == '__main__':
     app.run()

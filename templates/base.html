@@ -5,17 +5,50 @@
       {% else %}
       <title>Welcome</title>
       {% endif %}
-        <link rel="stylesheet" href="{{ url_for('static', filename='CSS/main.css') }}">
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
     </head>
     <body>
-        <div>Pages:
-            <a href="/">Home</a>
-            <a href="/login">Login</a>
-            <a href="/plot_line">Plot</a>
-            <a href="/characters">Characters</a>
-            <a href="/setting">Setting</a>
-            <a href="/write">Write</a>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="/">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/login">Login</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Write Book</a>
+        <div class="dropdown-menu" >
+          <a class="dropdown-item" href="/plot_line">Plot</a>
+          <a class="dropdown-item" href="/characters">Characters</a>
+          <a class="dropdown-item" href="/setting">Setting</a>
+          <a class="dropdown-item" href="/write">Write</a>
         </div>
+      </li>
+        <li class="nav-item dropdown">
+       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">My Book</a>
+        <div class="dropdown-menu" >
+          <a class="dropdown-item" href="/user_archetype">My Plot</a>
+          <a class="dropdown-item" href="/user_character">My Characters</a>
+          <a class="dropdown-item" href="/user_setting">My Setting</a>
+          <a class="dropdown-item" href="/user_books"> My Book</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
         <hr>
         {% block content %}{% endblock %}
     </body>

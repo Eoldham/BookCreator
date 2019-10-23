@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Your Plots</h1>
+{% if archetype == [] %}
+    <h2> You have no plots available :(</h2>
+    {%else%}
+    {% for dictionary in archetype %}
+        {% for item in dictionary.items() %}
+            <h6>{{ item[1] }}</h6><br>
+            {% endfor %}
+    {% endfor %}
+
+{% endif %}
+{% endblock %}

@@ -8,7 +8,7 @@
     {% for dictionary in character_list %}
             <h3>Character: {{dictionary['name']}}</h3>
             {% for items in dictionary.items() %}
-                <h4>{{ items[0] }}: {{ items[1] }}</h4>
+                <h6>{{ items[0] }}: {{ items[1] }}</h6>
             {% endfor %}
     {% endfor %}
 

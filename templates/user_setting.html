@@ -7,7 +7,7 @@
     {%else%}
     {% for dictionary in Setting %}
             {% for items in dictionary.items() %}
-                <h4>{{ items[0] }}: {{ items[1] }}</h4>
+                <h6>{{ items[0] }}: {{ items[1] }}</h6>
             {% endfor %}
     {% endfor %}
 
