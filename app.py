@@ -4,7 +4,7 @@ from forms import CharacterSheet
 from forms import Archetype
 from forms import Setting
 from forms import Write
-import spacy
+#import spacy
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'thecodex'
@@ -88,12 +88,12 @@ def signup():
         return render_template('user.html', result = result)
     return render_template('signup.html', form = form)
 
-def compare_books():
-    nlp = spacy.load("en_core_web_sm")
-    for book in BOOK:
-        for item in book.items():
-            text = text + item[1]
-        user_book = nlp(text)
+#def compare_books():
+    #nlp = spacy.load("en_core_web_sm")
+    #for book in BOOK:
+        #for item in book.items():
+            #text = text + item[1]
+        #user_book = nlp(text)
 
 
 if __name__ == '__main__':
