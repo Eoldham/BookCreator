@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Your Books</h1>
+<div class="mx-auto" style="width: 500px;">
+    <h1>Your Books</h1>
 {% if Book == [] %}
     <h2> you have no book available :(</h2>
     {%else%}
@@ -12,4 +13,5 @@
     {% endfor %}
 
 {% endif %}
+</div>
 {% endblock %}

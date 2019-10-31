@@ -16,9 +16,14 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
     </head>
     <body>
+     <style>
+            .nav-tabs {background-color: #d45f8e}
+        </style>
+     <style>
+            .nav-link {color: white}
+        </style>
     <ul class="nav nav-tabs">
       <li class="nav-item">
         <a class="nav-link active" href="/">Home </a>
@@ -50,6 +55,13 @@
 </nav>
 
         <hr>
-        {% block content %}{% endblock %}
+        {% block content %}
+        {% endblock %}
     </body>
+ <style>
+            body {
+                background-color: rgba(255, 100, 180, 0.34);
+                font-family:"Comic Sans MS", cursive, sans-serif
+            }
+        </style>
 </html>

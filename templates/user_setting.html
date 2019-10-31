@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<div class="mx-auto" style="width: 500px;">
 {% if Setting == [] %}
-    <h2> you have no Setting :(</h2>
+    <h1> Your Setting</h1>
+    <h2> You have no Setting :(</h2>
     {%else%}
     {% for dictionary in Setting %}
             {% for items in dictionary.items() %}
@@ -12,4 +13,5 @@
     {% endfor %}
 
 {% endif %}
+    </div>
 {% endblock %}

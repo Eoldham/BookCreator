@@ -1,7 +1,9 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, SelectField, TextAreaField
 
-
+"""
+These are all my forms
+"""
 class SignUpForm(FlaskForm):
     username = StringField('Username')
     password = PasswordField('Password')
