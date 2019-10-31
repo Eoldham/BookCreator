@@ -4,11 +4,11 @@ from forms import CharacterSheet
 from forms import Archetype
 from forms import Setting
 from forms import Write
-import requests
-import urllib.request
-import time
-from bs4 import BeautifulSoup
-import wget
+#import requests
+#import urllib.request
+#import time
+#from bs4 import BeautifulSoup
+#import wget
 #import spacy
 
 app = Flask(__name__)
