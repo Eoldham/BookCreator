@@ -4,6 +4,7 @@
 This is a website that allows you to begin planning your own book by walking through the process of writing your plot, characters, setting and outline. 
 
 ## Preview: 
+https://user-images.githubusercontent.com/54590979/113367368-d0be3280-9329-11eb-9cc9-17fecccecfe2.mp4
 
 ## Link: 
 https://book-creator.herokuapp.com/ 
